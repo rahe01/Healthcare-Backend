@@ -1,0 +1,13 @@
+enum Role {
+    USER
+    ADMIN
+    SUPER_ADMIN
+    DOCTOR
+    PAITENT
+}
+
+enum UserStatus {
+    BLOCKED
+    ACTIVE
+    DELTED
+}
