@@ -1,6 +1,8 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application, NextFunction, Request, Response } from "express";
 import { prisma } from "./app/lib/prisma";
 import { IndexRoutes } from "./app/routes";
+import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
+import { notFound } from "./app/middleware/notFound";
 
 const app: Application = express();
 
@@ -25,5 +27,21 @@ app.get("/", async (req: Request, res: Response) => {
     .status(200)
     .json({ message: "HealthCare Backend is running!", speciality });
 });
+
+
+
+
+
+
+app.use(globalErrorHandler)
+app.use(notFound)
+
+
+
+
+
+
+
+
 
 export default app;

@@ -1,5 +1,6 @@
 import { UserStatus } from "../../../generated/prisma/enums";
 import { auth } from "../../lib/auth";
+import { prisma } from "../../lib/prisma";
 
 interface IRegisterPatientPayload {
   name: string;
@@ -25,13 +26,32 @@ const registerPatient = async (payload: IRegisterPatientPayload) => {
   }
 
   // create patient profile in transaction after signup
-  // const patient = await prisma.$transaction(async (tx) =>{
+  try {
+    const patient = await prisma.$transaction(async (tx) => {
+      const patientTx = await tx.patient.create({
+        data: {
+          userId: data.user.id,
+          name: payload.name,
+          email: payload.email,
+        },
+      });
 
-  //     await tx.pa
+      return patientTx;
+    });
 
-  // })
-
-  return data;
+    return {
+      ...data,
+      patient,
+    };
+  } catch (error) {
+    console.log("Transaction error", error);
+    await prisma.user.delete({
+      where: {
+        id: data.user.id,
+      },
+    });
+    throw error;
+  }
 };
 
 interface ILoginUserPayload {
