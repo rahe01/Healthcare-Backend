@@ -1,10 +1,19 @@
-// @ts-check
+// .eslintrc.js (ESM style)
+import { defineConfig } from 'eslint-define-config';
 
-import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-import tseslint from 'typescript-eslint';
-
-export default defineConfig(
-  eslint.configs.recommended,
-  tseslint.configs.recommended,
-);
+export default defineConfig({
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  rules: {
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+  },
+  ignorePatterns: ['node_modules/', 'dist/', 'build/'],
+});

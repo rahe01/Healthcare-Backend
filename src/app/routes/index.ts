@@ -2,6 +2,7 @@ import { Router } from "express";
 import { SpecialityRoutes } from "../module/speciality/speciality.router";
 import { AuthRoutes } from "../module/auth/auth.router";
 import { UserRoutes } from "../module/user/user.route";
+import { DoctorRoutes } from "../module/doctor/doctor.route";
 
 
 const router = Router();
@@ -9,7 +10,8 @@ const router = Router();
 
 router.use("/specialities", SpecialityRoutes);
 router.use("/auth" , AuthRoutes);
-router.use("/doctors" , UserRoutes)
+router.use("/users" , UserRoutes);
+router.use("/doctors" , DoctorRoutes)
 
 
 export const IndexRoutes = router;
