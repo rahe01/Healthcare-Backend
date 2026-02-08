@@ -9,6 +9,8 @@ model Doctor {
     isDeleted     Boolean   @default(false)
     deletedAt     DateTime?
 
+    
+
     registrationNumber  String @unique
     experience          Int    @default(0)
     gender              Gender
@@ -20,6 +22,9 @@ model Doctor {
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+
+    
 
 
     // realtions
