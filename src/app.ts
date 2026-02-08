@@ -34,9 +34,8 @@ app.get("/", async (req: Request, res: Response) => {
 
 });
 
-app
 
-
+console.log("Hi a");
 
 
 
