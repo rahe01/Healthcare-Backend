@@ -1,4 +1,4 @@
-import express, { Application,  Request, Response } from "express";
+import express, { Application, Request, Response } from "express";
 import { prisma } from "./app/lib/prisma";
 import { IndexRoutes } from "./app/routes";
 import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
@@ -14,7 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser())
 
-app.use("/api/v1/" , IndexRoutes);
+app.use("/api/v1/", IndexRoutes);
+
+
 
 
 
@@ -29,6 +31,7 @@ app.get("/", async (req: Request, res: Response) => {
   res
     .status(200)
     .json({ message: "HealthCare Backend is running!", speciality });
+
 });
 
 app
