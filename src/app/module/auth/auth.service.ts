@@ -66,7 +66,7 @@ const registerPatient = async (payload: IRegisterPatientPayload) => {
       accessToken,
       refreshToken,
       patient,
-     
+
     };
   } catch (error) {
     console.log("Transaction error", error);

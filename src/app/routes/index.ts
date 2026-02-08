@@ -9,9 +9,9 @@ const router = Router();
 
 
 router.use("/specialities", SpecialityRoutes);
-router.use("/auth" , AuthRoutes);
-router.use("/users" , UserRoutes);
-router.use("/doctors" , DoctorRoutes)
+router.use("/auth", AuthRoutes);
+router.use("/users", UserRoutes);
+router.use("/doctors", DoctorRoutes)
 
 
 export const IndexRoutes = router;
