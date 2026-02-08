@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import app from "./app";
 import { envVars } from "./config/env";
 
@@ -8,6 +10,7 @@ const bootstrap = () => {
         });
     } catch (error) {
         console.error('Failed to start server:', error);
+        
     }
 }
 
