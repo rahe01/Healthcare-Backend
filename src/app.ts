@@ -17,6 +17,8 @@ app.use(cookieParser())
 app.use("/api/v1/" , IndexRoutes);
 
 
+
+
 // Basic route
 app.get("/", async (req: Request, res: Response) => {
   const speciality = await prisma.speciality.create({

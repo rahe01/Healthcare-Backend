@@ -16,8 +16,9 @@ interface EnvConfig {
   REFRESH_TOKEN_SECRET: string;
   ACCESS_TOKEN_EXPIRES_IN: string;
   REFRESH_TOKEN_EXPIRES_IN: string;
-  BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN :string;
-BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE:string;
+  BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN: string;
+  BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE: string;
+
 }
 
 
@@ -46,6 +47,8 @@ const loadEnvVariables = (): EnvConfig => {
     }
   })
 
+
+
   return {
     NODE_ENV: process.env.NODE_ENV as string,
     PORT: process.env.PORT as string,
@@ -57,8 +60,9 @@ const loadEnvVariables = (): EnvConfig => {
     ACCESS_TOKEN_EXPIRES_IN: process.env.ACCESS_TOKEN_EXPIRES_IN as string,
     REFRESH_TOKEN_EXPIRES_IN: process.env.REFRESH_TOKEN_EXPIRES_IN as string,
     BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN: process.env.BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN as string,
-    BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE: process.env.BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE as string
-    
+    BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE: process.env.BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE as string,
+
+
   };
 }
 
