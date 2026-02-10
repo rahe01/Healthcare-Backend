@@ -143,6 +143,10 @@ const createDoctor = async (payload:ICreateDoctorPayload) =>{
 
 
 
+// Add this function to user.service.ts
+
+
+
 
 
 
