@@ -1,4 +1,5 @@
 import { UserStatus } from "../../../generated/prisma/enums";
+import { IRequestUser } from "../../interfaces/requestUser.interface";
 import { auth } from "../../lib/auth";
 import { prisma } from "../../lib/prisma";
 import { tokenUtils } from "../../utils/token";
@@ -98,7 +99,7 @@ const logingUser = async (payload: ILoginUserPayload) => {
     throw new Error("User is Blocked");
   }
 
-  if (data.user.isDeleted || data.user.status === UserStatus.DELTED) {
+  if (data.user.isDeleted || data.user.status === UserStatus.DELETED) {
     throw new Error("user is deleted");
   }
 
@@ -130,7 +131,48 @@ const logingUser = async (payload: ILoginUserPayload) => {
   };
 };
 
+
+const getMe = async (user: IRequestUser) => {
+  console.log({user});
+
+  const isUserExist = await prisma.user.findUnique({
+    where: {
+      id: user.userId,
+    },
+    include: {
+      patient: {
+        include: {
+          appointments: true,
+          reviews: true,
+          prescriptions: true,
+          medicalReports: true,
+          patientHealthData: true,
+
+        },
+      
+      },
+      doctor: {
+        include: {
+         specialties: true,
+         appointments: true,
+         reviews: true,
+         prescriptions: true,
+        },
+      },
+      admin: true,
+    },
+  });
+
+  if (!isUserExist) {
+    throw new Error("User not found");
+  }
+
+  return isUserExist;
+
+}
+
 export const AuthService = {
   registerPatient,
   logingUser,
+  getMe
 };
