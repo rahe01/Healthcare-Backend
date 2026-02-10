@@ -5,6 +5,7 @@ import AppError from "../errorHelpers/AppError";
 import status from "http-status";
 import path from "path";
 import ejs from "ejs";
+import { SendEmailOptions } from "../interfaces/email.interface";
 
 
 
@@ -22,26 +23,13 @@ const transporter = nodemailer.createTransport({
 
 })
 
-interface SendEmailOptions {
-    to: string;
-    subject: string;
-    templateName : string;
-    templateData : Record<string,any>;
-    attachments ?:{
-        filename:string;
-   content : Buffer |string;
-   contentType :string;
-    
-    }[]
-
-}
 
 
 
-export const sendEmail = async ({ to, subject, templateName, templateData, attachments }: SendEmailOptions) =>{
+export const sendEmail = async ({ to, subject, templateName, templateData, attachments }: SendEmailOptions) => {
 
 
-    
+
 
 
     try {
@@ -53,32 +41,32 @@ export const sendEmail = async ({ to, subject, templateName, templateData, attac
 
         const info = await transporter.sendMail({
             from: envVars.EMAIL_SENDER.SMTP_USER,
-            to:to,
-            subject:subject,
-            html:html,
+            to: to,
+            subject: subject,
+            html: html,
             attachments: attachments?.map(attachment => ({
                 filename: attachment.filename,
                 content: attachment.content,
                 contentType: attachment.contentType,
             }))
-      
 
 
-        
-        
-        
+
+
+
+
         })
 
 
-console.log(`Email send to ${to} : ${info}`);
+        console.log(`Email send to ${to} : ${info}`);
 
 
 
-    }catch(error:any){
-        console.log( "Emain sending Error " , error.message);
-        throw new AppError(status.INTERNAL_SERVER_ERROR , "Emain sending Error");
-    
-    
+    } catch (error: any) {
+        console.log("Emain sending Error ", error.message);
+        throw new AppError(status.INTERNAL_SERVER_ERROR, "Emain sending Error");
+
+
     }
 
 }
