@@ -23,19 +23,14 @@ app.use("/api/v1/", IndexRoutes);
 
 // Basic route
 app.get("/", async (req: Request, res: Response) => {
-  const speciality = await prisma.speciality.create({
-    data: {
-      title: "Cardiology",
-    },
-  });
+
   res
-    .status(200)
-    .json({ message: "HealthCare Backend is running!", speciality });
+    
+    .send( "HealthCare Backend is running!" );
 
-});
+  });
 
 
-console.log("Hi a");
 
 
 
