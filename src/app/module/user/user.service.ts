@@ -2,7 +2,8 @@
 import { Role, Speciality } from "../../../generated/prisma/client";
 import { auth } from "../../lib/auth";
 import { prisma } from "../../lib/prisma";
-import { ICreateDoctorPayload } from "./user.interface";
+import { ICreateAdmin, ICreateDoctorPayload } from "./user.interface";
+
 
 
 
@@ -139,6 +140,21 @@ const createDoctor = async (payload:ICreateDoctorPayload) =>{
 
     
 }
+
+
+
+// Add this function to user.service.ts
+
+
+
+
+
+
+
+
+
+
+
 
 
 export const UserService ={

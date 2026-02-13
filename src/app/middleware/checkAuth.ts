@@ -12,6 +12,8 @@ export const checkAuth = (...authRoles: Role[]) => async (req: Request, res: Res
 
 
     try {
+
+        // session token verufy
         const sessionToken = CookieUtils.getCookie(req, "better-auth.session_token")
 
         if (!sessionToken) {
@@ -51,7 +53,7 @@ export const checkAuth = (...authRoles: Role[]) => async (req: Request, res: Res
                     console.log("Session Expiring soon!!!")
                 }
 
-                if (user.status === UserStatus.BLOCKED || user.status === UserStatus.DELTED) {
+                if (user.status === UserStatus.BLOCKED || user.status === UserStatus.DELETED) {
                     throw new AppError(status.UNAUTHORIZED, 'Unauthorized access! user not active')
                 }
 
@@ -61,6 +63,12 @@ export const checkAuth = (...authRoles: Role[]) => async (req: Request, res: Res
 
                 if (authRoles.length > 0 && !authRoles.includes(user.role)) {
                     throw new AppError(status.FORBIDDEN, 'Forbidden access! You do not have to access this resource')
+                }
+
+                req.user = {
+                    userId: user.id,
+                    role: user.role,
+                    email: user.email
                 }
 
 
@@ -92,6 +100,7 @@ export const checkAuth = (...authRoles: Role[]) => async (req: Request, res: Res
 
 
 
+       
 
         next()
 

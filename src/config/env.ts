@@ -6,6 +6,11 @@ import status from "http-status";
 dotenv.config();
 
 
+
+// CLOUDINARY_CLOUD_NAME = dskuonbln
+// CLOUDINARY_API_KEY = 828777769347437
+// CLOUDINARY_API_SECRET = IbeBZJosk8p1 - bg2H4cFR0ISCP8
+
 interface EnvConfig {
   NODE_ENV: string;
   PORT: string;
@@ -18,6 +23,31 @@ interface EnvConfig {
   REFRESH_TOKEN_EXPIRES_IN: string;
   BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN: string;
   BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE: string;
+  EMAIL_SENDER:{
+    SMTP_USER:string;
+    SMTP_PASS:string;
+    SMTP_HOST:string;
+    SMTP_PORT:string;
+    SMTP_FROM:string;
+
+  };
+  GOOGLE_CLIENT_ID: string;
+  GOOGLE_CLIEN_SECRET: string;
+  GOOGLE_CALLBACK_URL: string;
+  FRONTEND_URL: string;
+  CLOUDINARY_CLOUD_NAME: string;
+  CLOUDINARY_API_KEY: string;
+  CLOUDINARY_API_SECRET: string;
+
+
+  
+
+
+  
+   
+  
+
+
 
 }
 
@@ -35,7 +65,20 @@ const loadEnvVariables = (): EnvConfig => {
     "ACCESS_TOKEN_EXPIRES_IN",
     "REFRESH_TOKEN_EXPIRES_IN",
     "BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN",
-    "BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE"
+    "BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE",
+    "EMAIL_SENDER_SMTP_USER",
+    "EMAIL_SENDER_SMTP_PASS",
+    "EMAIL_SENDER_SMTP_HOST",
+    "EMAIL_SENDER_SMTP_PORT",
+    "EMAIL_SENDER_SMTP_FROM",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIEN_SECRET",
+    "GOOGLE_CALLBACK_URL",
+    "FRONTEND_URL",
+    "CLOUDINARY_CLOUD_NAME",
+    "CLOUDINARY_API_KEY",
+    "CLOUDINARY_API_SECRET",
+
 
 
   ];
@@ -61,6 +104,24 @@ const loadEnvVariables = (): EnvConfig => {
     REFRESH_TOKEN_EXPIRES_IN: process.env.REFRESH_TOKEN_EXPIRES_IN as string,
     BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN: process.env.BETTER_AUTH_SESSION_TOKEN_EXPIRES_IN as string,
     BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE: process.env.BETTER_AUTH_SESSION_TOKEN_UPDATE_AGE as string,
+    EMAIL_SENDER:{
+      SMTP_USER:process.env.EMAIL_SENDER_SMTP_USER as string,
+      SMTP_PASS:process.env.EMAIL_SENDER_SMTP_PASS as string,
+      SMTP_HOST:process.env.EMAIL_SENDER_SMTP_HOST as string,
+      SMTP_PORT:process.env.EMAIL_SENDER_SMTP_PORT as string,
+      SMTP_FROM:process.env.EMAIL_SENDER_SMTP_FROM as string,
+
+    },
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID as string,
+    GOOGLE_CLIEN_SECRET: process.env.GOOGLE_CLIEN_SECRET as string,
+    GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL as string,
+    FRONTEND_URL: process.env.FRONTEND_URL as string,
+    CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME as string,
+    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY as string,
+    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET as string,
+    
+
+
 
 
   };
