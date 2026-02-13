@@ -5,6 +5,14 @@ import AppError from "../../errorHelpers/AppError";
 import { UserStatus } from "../../../generated/prisma/enums";
 
 
+
+
+
+
+
+
+
+
 const getAllDoctors = async () => {
     const doctors = await prisma.doctor.findMany({
         where: {
