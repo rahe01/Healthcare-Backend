@@ -22,6 +22,7 @@ export class QueryBuilder<
         private queryParams: IQueryParams,
         private config: IQueryConfig = {}
     ) {
+        this.queryParams = queryParams ?? {}; // 🔥 CRASH FIX
         this.query = {
             where: {},
             include: {},

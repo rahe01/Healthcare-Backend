@@ -12,9 +12,17 @@ import { SpecialityValidation } from "./speciality.validation";
 
 const router = Router();
 
-router.post("/",  multerUpload.single("file"), validateRequest(SpecialityValidation.createSpecialityZodSchema) ,SpecialityController.createSpeciality);
-router.get("/", checkAuth(Role.ADMIN, Role.SUPER_ADMIN, Role.DOCTOR, Role.PAITENT), SpecialityController.getAllSpecialities);
-router.delete("/:id", checkAuth(Role.ADMIN, Role.SUPER_ADMIN), SpecialityController.deleteSpeciality);
+router.post("/",
+    multerUpload.single("file"),
+    validateRequest(SpecialityValidation.createSpecialityZodSchema),
+    SpecialityController.createSpeciality);
+router.get("/",
+    // checkAuth(Role.ADMIN, Role.SUPER_ADMIN, Role.DOCTOR, Role.PAITENT),
+
+    SpecialityController.getAllSpecialities);
+router.delete("/:id",
+    // checkAuth(Role.ADMIN, Role.SUPER_ADMIN),
+    SpecialityController.deleteSpeciality);
 
 
 export const SpecialityRoutes = router;
