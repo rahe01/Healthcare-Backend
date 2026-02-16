@@ -1,14 +1,13 @@
 model Schedule {
-    id        String   @id @default(uuid(7))
-    stratDate DateTime
+    id            String   @id @default(uuid(7))
+    startDateTime DateTime
 
-    endDate         DateTime
-    startTime       DateTime
-    endTime         DateTime
+    endDateTime DateTime
+
     createdAt       DateTime          @default(now())
     updatedAt       DateTime          @updatedAt
     dotcorSchedules DotcorSchedules[]
-    appointments     Appointment[]
+    appointments    Appointment[]
 
     @@map("schedules")
 }
@@ -24,9 +23,6 @@ model DotcorSchedules {
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
-   
-
 
     @@id([doctorId, scheduleId])
     @@index([doctorId])
