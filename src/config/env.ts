@@ -7,9 +7,7 @@ dotenv.config();
 
 
 
-// CLOUDINARY_CLOUD_NAME = dskuonbln
-// CLOUDINARY_API_KEY = 828777769347437
-// CLOUDINARY_API_SECRET = IbeBZJosk8p1 - bg2H4cFR0ISCP8
+
 
 interface EnvConfig {
   NODE_ENV: string;
@@ -38,6 +36,11 @@ interface EnvConfig {
   CLOUDINARY_CLOUD_NAME: string;
   CLOUDINARY_API_KEY: string;
   CLOUDINARY_API_SECRET: string;
+  STRIPE:{
+    STRIPE_SECRET_KEY:string;
+    STRIPE_WEBHOOK_SECRET:string;
+
+  }
 
 
   
@@ -78,6 +81,9 @@ const loadEnvVariables = (): EnvConfig => {
     "CLOUDINARY_CLOUD_NAME",
     "CLOUDINARY_API_KEY",
     "CLOUDINARY_API_SECRET",
+    "STRIPE_SECRET_KEY",
+    "STRIPE_WEBHOOK_SECRET",
+
 
 
 
@@ -119,6 +125,12 @@ const loadEnvVariables = (): EnvConfig => {
     CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME as string,
     CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY as string,
     CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET as string,
+    STRIPE:{
+      STRIPE_SECRET_KEY:process.env.STRIPE_SECRET_KEY as string,
+      STRIPE_WEBHOOK_SECRET:process.env.STRIPE_WEBHOOK_SECRET as string,
+
+    
+    }
     
 
 

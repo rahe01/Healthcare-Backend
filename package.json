@@ -12,7 +12,8 @@
     "migrate": "prisma migrate dev",
     "generate": "prisma generate",
     "studio": "prisma studio",
-    "db:push": "prisma db push"
+    "db:push": "prisma db push",
+    "stripe:webhook": "stripe listen --forward-to localhost:5000/webhook"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +38,7 @@
     "nodemailer": "^8.0.1",
     "pg": "^8.18.0",
     "qs": "^6.15.0",
+    "stripe": "^20.3.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
