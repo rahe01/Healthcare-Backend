@@ -8,7 +8,6 @@ dotenv.config();
 
 
 
-
 interface EnvConfig {
   NODE_ENV: string;
   PORT: string;
@@ -40,7 +39,10 @@ interface EnvConfig {
     STRIPE_SECRET_KEY:string;
     STRIPE_WEBHOOK_SECRET:string;
 
-  }
+  };
+  SUPER_ADMIN_EMAIL: string;
+  SUPER_ADMIN_PASSWORD: string;
+
 
 
   
@@ -83,6 +85,9 @@ const loadEnvVariables = (): EnvConfig => {
     "CLOUDINARY_API_SECRET",
     "STRIPE_SECRET_KEY",
     "STRIPE_WEBHOOK_SECRET",
+    "SUPER_ADMIN_EMAIL",
+    "SUPER_ADMIN_PASSWORD",
+
 
 
 
@@ -130,7 +135,10 @@ const loadEnvVariables = (): EnvConfig => {
       STRIPE_WEBHOOK_SECRET:process.env.STRIPE_WEBHOOK_SECRET as string,
 
     
-    }
+    },
+    SUPER_ADMIN_EMAIL: process.env.SUPER_ADMIN_EMAIL as string,
+    SUPER_ADMIN_PASSWORD: process.env.SUPER_ADMIN_PASSWORD as string,
+
     
 
 

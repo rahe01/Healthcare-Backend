@@ -10,6 +10,8 @@ import cors from "cors";
 import { envVars } from "./config/env";
 import qs from "qs";
 import { PaymentController } from "./app/module/payment/payment.controller";
+import corn from "node-cron"
+import { AppointmentService } from "./app/module/appointment/appointment.service";
 
 
 const app: Application = express();
@@ -40,6 +42,29 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
+
+
+corn.schedule("*/25 * * * *" , async()=>{
+ 
+
+  try{
+    console.log("Running corn job to cancel unpaid appointments......");
+    await AppointmentService.canceledUnpaidAppointments();
+  }catch(error:any){
+    console.log("Error from corn job cancel unpaid appointments...." , error.message);
+  }
+
+
+
+
+
+
+
+
+
+
+
+})
 
 app.use("/api/v1/", IndexRoutes);
 

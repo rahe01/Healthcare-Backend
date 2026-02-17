@@ -11,78 +11,55 @@ import { scheduleFilterableFields, scheduleIncludeConfig, scheduleSearchableFiel
 
 
 const createSchedule = async (payload: ICreateSchedulePayload) => {
-
     const { startDate, endDate, startTime, endTime } = payload;
 
     const interval = 30;
-    const currentDate = new Date(startDate)
-    const lastDate = new Date(endDate)
+    const currentDate = new Date(startDate);
+    const lastDate = new Date(endDate);
 
-    const schedules = []
+    const schedules = [];
+
     while (currentDate <= lastDate) {
-        const startDateTime = new Date(
-            addMinutes(
-                addHours(
-                    `${format(currentDate, "yyyy-MM-dd")}`,
-                    Number(startTime.split(":")[0])
-                ),
-                Number(startTime.split(":")[1]
 
-                )
-            )
-        );
+        const dayStart = new Date(`${format(currentDate, "yyyy-MM-dd")}T${startTime}:00`);
+        const dayEnd = new Date(`${format(currentDate, "yyyy-MM-dd")}T${endTime}:00`);
 
-        const endDateTime = new Date(
-            addMinutes(
-                addHours(
-                    `${format(currentDate, "yyyy-MM-dd")}`,
-                    Number(endTime.split(":")[0])
-                ),
-                Number(endTime.split(":")[1])
-            )
-        )
+        let slotStart = new Date(dayStart);
 
-        while (startDateTime <= endDateTime) {
-            const s = await convertDateTime(startDateTime)
-            const e = await convertDateTime(endDateTime)
+        while (slotStart < dayEnd) {
+            const slotEnd = new Date(slotStart);
+            slotEnd.setMinutes(slotEnd.getMinutes() + interval);
+
+            if (slotEnd > dayEnd) break;
+
             const scheduleData = {
-                startDateTime: s,
-                endDateTime: e
+                startDateTime: slotStart,
+                endDateTime: slotEnd
+            };
 
-            }
             const existingSchedule = await prisma.schedule.findFirst({
                 where: {
                     startDateTime: scheduleData.startDateTime,
                     endDateTime: scheduleData.endDateTime
                 }
-            })
+            });
+
             if (!existingSchedule) {
                 const result = await prisma.schedule.create({
                     data: scheduleData
-                })
-                schedules.push(result)
-
+                });
+                schedules.push(result);
             }
-            startDateTime.setMinutes(startDateTime.getMinutes() + interval)
 
-
-
+            slotStart = new Date(slotEnd);
         }
-        currentDate.setDate(currentDate.getDate() + 1)
 
-
-
-
+        currentDate.setDate(currentDate.getDate() + 1);
     }
 
     return schedules;
-
-
-
-
-
-}
-
+};
+  
 const getAllSchedules = async (query: IQueryParams) => {
     const queryBuilder = new QueryBuilder<Schedule, Prisma.ScheduleWhereInput, Prisma.ScheduleInclude>(
         prisma.schedule,
