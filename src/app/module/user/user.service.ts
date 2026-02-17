@@ -49,6 +49,26 @@ const createDoctor = async (payload:ICreateDoctorPayload) =>{
 
     try{
 
+
+        const existingDoctor = await prisma.doctor.findUnique({
+            where:{
+                registrationNumber: payload.doctor.registrationNumber
+            }
+        })
+
+
+
+        if(existingDoctor){
+            await prisma.user.delete({
+                where:{
+                    id:userData.user.id
+                }
+            })
+            throw new Error(
+                `Doctor with registration number ${payload.doctor.registrationNumber} already exists`
+              );
+        }
+
         const result = await prisma.$transaction(async (tx) =>{
             const doctorData = await tx.doctor.create({
                 data:{
@@ -134,6 +154,7 @@ const createDoctor = async (payload:ICreateDoctorPayload) =>{
                 id:userData.user.id
             }
         })
+        throw error;
 
     }
 
