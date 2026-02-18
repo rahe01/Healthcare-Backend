@@ -29,7 +29,7 @@ export type PatientMinAggregateOutputType = {
   name: string | null
   email: string | null
   profilePhoto: string | null
-  contactnumber: string | null
+  contactNumber: string | null
   address: string | null
   isDeleted: boolean | null
   deletedAt: Date | null
@@ -43,7 +43,7 @@ export type PatientMaxAggregateOutputType = {
   name: string | null
   email: string | null
   profilePhoto: string | null
-  contactnumber: string | null
+  contactNumber: string | null
   address: string | null
   isDeleted: boolean | null
   deletedAt: Date | null
@@ -57,7 +57,7 @@ export type PatientCountAggregateOutputType = {
   name: number
   email: number
   profilePhoto: number
-  contactnumber: number
+  contactNumber: number
   address: number
   isDeleted: number
   deletedAt: number
@@ -73,7 +73,7 @@ export type PatientMinAggregateInputType = {
   name?: true
   email?: true
   profilePhoto?: true
-  contactnumber?: true
+  contactNumber?: true
   address?: true
   isDeleted?: true
   deletedAt?: true
@@ -87,7 +87,7 @@ export type PatientMaxAggregateInputType = {
   name?: true
   email?: true
   profilePhoto?: true
-  contactnumber?: true
+  contactNumber?: true
   address?: true
   isDeleted?: true
   deletedAt?: true
@@ -101,7 +101,7 @@ export type PatientCountAggregateInputType = {
   name?: true
   email?: true
   profilePhoto?: true
-  contactnumber?: true
+  contactNumber?: true
   address?: true
   isDeleted?: true
   deletedAt?: true
@@ -188,7 +188,7 @@ export type PatientGroupByOutputType = {
   name: string
   email: string
   profilePhoto: string | null
-  contactnumber: string | null
+  contactNumber: string | null
   address: string | null
   isDeleted: boolean
   deletedAt: Date | null
@@ -223,7 +223,7 @@ export type PatientWhereInput = {
   name?: Prisma.StringFilter<"Patient"> | string
   email?: Prisma.StringFilter<"Patient"> | string
   profilePhoto?: Prisma.StringNullableFilter<"Patient"> | string | null
-  contactnumber?: Prisma.StringNullableFilter<"Patient"> | string | null
+  contactNumber?: Prisma.StringNullableFilter<"Patient"> | string | null
   address?: Prisma.StringNullableFilter<"Patient"> | string | null
   isDeleted?: Prisma.BoolFilter<"Patient"> | boolean
   deletedAt?: Prisma.DateTimeNullableFilter<"Patient"> | Date | string | null
@@ -243,7 +243,7 @@ export type PatientOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   profilePhoto?: Prisma.SortOrderInput | Prisma.SortOrder
-  contactnumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  contactNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   address?: Prisma.SortOrderInput | Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -267,7 +267,7 @@ export type PatientWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.PatientWhereInput | Prisma.PatientWhereInput[]
   name?: Prisma.StringFilter<"Patient"> | string
   profilePhoto?: Prisma.StringNullableFilter<"Patient"> | string | null
-  contactnumber?: Prisma.StringNullableFilter<"Patient"> | string | null
+  contactNumber?: Prisma.StringNullableFilter<"Patient"> | string | null
   address?: Prisma.StringNullableFilter<"Patient"> | string | null
   isDeleted?: Prisma.BoolFilter<"Patient"> | boolean
   deletedAt?: Prisma.DateTimeNullableFilter<"Patient"> | Date | string | null
@@ -286,7 +286,7 @@ export type PatientOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   profilePhoto?: Prisma.SortOrderInput | Prisma.SortOrder
-  contactnumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  contactNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   address?: Prisma.SortOrderInput | Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -306,7 +306,7 @@ export type PatientScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"Patient"> | string
   email?: Prisma.StringWithAggregatesFilter<"Patient"> | string
   profilePhoto?: Prisma.StringNullableWithAggregatesFilter<"Patient"> | string | null
-  contactnumber?: Prisma.StringNullableWithAggregatesFilter<"Patient"> | string | null
+  contactNumber?: Prisma.StringNullableWithAggregatesFilter<"Patient"> | string | null
   address?: Prisma.StringNullableWithAggregatesFilter<"Patient"> | string | null
   isDeleted?: Prisma.BoolWithAggregatesFilter<"Patient"> | boolean
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Patient"> | Date | string | null
@@ -320,7 +320,7 @@ export type PatientCreateInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -339,7 +339,7 @@ export type PatientUncheckedCreateInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -358,7 +358,7 @@ export type PatientUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -377,7 +377,7 @@ export type PatientUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -396,7 +396,7 @@ export type PatientCreateManyInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -410,7 +410,7 @@ export type PatientUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -423,7 +423,7 @@ export type PatientUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -447,7 +447,7 @@ export type PatientCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   profilePhoto?: Prisma.SortOrder
-  contactnumber?: Prisma.SortOrder
+  contactNumber?: Prisma.SortOrder
   address?: Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
@@ -461,7 +461,7 @@ export type PatientMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   profilePhoto?: Prisma.SortOrder
-  contactnumber?: Prisma.SortOrder
+  contactNumber?: Prisma.SortOrder
   address?: Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
@@ -475,7 +475,7 @@ export type PatientMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   profilePhoto?: Prisma.SortOrder
-  contactnumber?: Prisma.SortOrder
+  contactNumber?: Prisma.SortOrder
   address?: Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
@@ -591,7 +591,7 @@ export type PatientCreateWithoutAppointmentsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -609,7 +609,7 @@ export type PatientUncheckedCreateWithoutAppointmentsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -643,7 +643,7 @@ export type PatientUpdateWithoutAppointmentsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -661,7 +661,7 @@ export type PatientUncheckedUpdateWithoutAppointmentsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -679,7 +679,7 @@ export type PatientCreateWithoutUserInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -697,7 +697,7 @@ export type PatientUncheckedCreateWithoutUserInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -731,7 +731,7 @@ export type PatientUpdateWithoutUserInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -749,7 +749,7 @@ export type PatientUncheckedUpdateWithoutUserInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -767,7 +767,7 @@ export type PatientCreateWithoutMedicalReportsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -785,7 +785,7 @@ export type PatientUncheckedCreateWithoutMedicalReportsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -819,7 +819,7 @@ export type PatientUpdateWithoutMedicalReportsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -837,7 +837,7 @@ export type PatientUncheckedUpdateWithoutMedicalReportsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -855,7 +855,7 @@ export type PatientCreateWithoutPatientHealthDataInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -873,7 +873,7 @@ export type PatientUncheckedCreateWithoutPatientHealthDataInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -907,7 +907,7 @@ export type PatientUpdateWithoutPatientHealthDataInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -925,7 +925,7 @@ export type PatientUncheckedUpdateWithoutPatientHealthDataInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -943,7 +943,7 @@ export type PatientCreateWithoutPrescriptionsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -961,7 +961,7 @@ export type PatientUncheckedCreateWithoutPrescriptionsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -995,7 +995,7 @@ export type PatientUpdateWithoutPrescriptionsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1013,7 +1013,7 @@ export type PatientUncheckedUpdateWithoutPrescriptionsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1031,7 +1031,7 @@ export type PatientCreateWithoutReviewsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -1049,7 +1049,7 @@ export type PatientUncheckedCreateWithoutReviewsInput = {
   name: string
   email: string
   profilePhoto?: string | null
-  contactnumber?: string | null
+  contactNumber?: string | null
   address?: string | null
   isDeleted?: boolean
   deletedAt?: Date | string | null
@@ -1083,7 +1083,7 @@ export type PatientUpdateWithoutReviewsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1101,7 +1101,7 @@ export type PatientUncheckedUpdateWithoutReviewsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   profilePhoto?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  contactnumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  contactNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1177,7 +1177,7 @@ export type PatientSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name?: boolean
   email?: boolean
   profilePhoto?: boolean
-  contactnumber?: boolean
+  contactNumber?: boolean
   address?: boolean
   isDeleted?: boolean
   deletedAt?: boolean
@@ -1198,7 +1198,7 @@ export type PatientSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   email?: boolean
   profilePhoto?: boolean
-  contactnumber?: boolean
+  contactNumber?: boolean
   address?: boolean
   isDeleted?: boolean
   deletedAt?: boolean
@@ -1213,7 +1213,7 @@ export type PatientSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   email?: boolean
   profilePhoto?: boolean
-  contactnumber?: boolean
+  contactNumber?: boolean
   address?: boolean
   isDeleted?: boolean
   deletedAt?: boolean
@@ -1228,7 +1228,7 @@ export type PatientSelectScalar = {
   name?: boolean
   email?: boolean
   profilePhoto?: boolean
-  contactnumber?: boolean
+  contactNumber?: boolean
   address?: boolean
   isDeleted?: boolean
   deletedAt?: boolean
@@ -1237,7 +1237,7 @@ export type PatientSelectScalar = {
   userId?: boolean
 }
 
-export type PatientOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "profilePhoto" | "contactnumber" | "address" | "isDeleted" | "deletedAt" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["patient"]>
+export type PatientOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "profilePhoto" | "contactNumber" | "address" | "isDeleted" | "deletedAt" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["patient"]>
 export type PatientInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   appointments?: boolean | Prisma.Patient$appointmentsArgs<ExtArgs>
   prescriptions?: boolean | Prisma.Patient$prescriptionsArgs<ExtArgs>
@@ -1269,7 +1269,7 @@ export type $PatientPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     name: string
     email: string
     profilePhoto: string | null
-    contactnumber: string | null
+    contactNumber: string | null
     address: string | null
     isDeleted: boolean
     deletedAt: Date | null
@@ -1709,7 +1709,7 @@ export interface PatientFieldRefs {
   readonly name: Prisma.FieldRef<"Patient", 'String'>
   readonly email: Prisma.FieldRef<"Patient", 'String'>
   readonly profilePhoto: Prisma.FieldRef<"Patient", 'String'>
-  readonly contactnumber: Prisma.FieldRef<"Patient", 'String'>
+  readonly contactNumber: Prisma.FieldRef<"Patient", 'String'>
   readonly address: Prisma.FieldRef<"Patient", 'String'>
   readonly isDeleted: Prisma.FieldRef<"Patient", 'Boolean'>
   readonly deletedAt: Prisma.FieldRef<"Patient", 'DateTime'>

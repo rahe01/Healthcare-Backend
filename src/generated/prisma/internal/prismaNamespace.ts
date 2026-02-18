@@ -1853,7 +1853,7 @@ export const PatientScalarFieldEnum = {
   name: 'name',
   email: 'email',
   profilePhoto: 'profilePhoto',
-  contactnumber: 'contactnumber',
+  contactNumber: 'contactNumber',
   address: 'address',
   isDeleted: 'isDeleted',
   deletedAt: 'deletedAt',
