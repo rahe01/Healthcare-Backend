@@ -11,7 +11,7 @@ import { sendEmail } from "../../utils/email";
 const givePrescription = async (user: IRequestUser, payload: ICreatePrescriptionPayload) => {
 
     const doctorData = await prisma.doctor.findUnique({
-        where: { userId: user?.email },
+        where: { email: user.email },
         include: { specialties: true }
     });
 
@@ -22,24 +22,18 @@ const givePrescription = async (user: IRequestUser, payload: ICreatePrescription
         );
     };
 
-    const appointmentData = await prisma.appointment.findUniqueOrThrow({
-        where: {
-            id: payload.appointmentId
-        },
+    const appointmentData = await prisma.appointment.findUnique({
+        where: { id: payload.appointmentId },
         include: {
             patient: true,
-            doctor: {
-                include: {
-                    specialties: true
-                }
-            },
-            schedule: {
-                include: {
-                    dotcorSchedules: true
-                }
-            },
+            doctor: { include: { specialties: true } },
+            schedule: { include: { dotcorSchedules: true } }
         }
     });
+
+    if (!appointmentData) {
+        throw new AppError(status.NOT_FOUND, "Appointment not found for this ID");
+    }
 
     if (appointmentData.doctorId !== doctorData.id) {
         throw new AppError(status.BAD_REQUEST, "You are not authorized to give prescription for this appointment");
